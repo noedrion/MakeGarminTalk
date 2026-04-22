@@ -32,11 +32,14 @@
   h1 { font-size: clamp(34px, 7vw, 58px); font-weight: 600; line-height: 1.1; letter-spacing: -.03em; margin-bottom: 20px; color: var(--text); }
   h1 span { background: linear-gradient(90deg, #60a5fa, #a78bfa); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
   .hero-desc { font-size: 16px; color: var(--muted); line-height: 1.7; max-width: 480px; margin: 0 auto 40px; }
-  .dl-wrap { display: flex; flex-direction: column; align-items: center; gap: 14px; }
-  .dl-btn { display: inline-flex; align-items: center; gap: 10px; background: var(--accent-dark); color: white; text-decoration: none; font-size: 15px; font-weight: 500; font-family: 'Inter', sans-serif; padding: 14px 28px; border-radius: 10px; border: none; cursor: pointer; transition: background .15s, transform .15s; box-shadow: 0 0 32px rgba(37,99,235,0.3); }
-  .dl-btn:hover { background: #1d4ed8; transform: translateY(-1px); }
-  .dl-btn svg { width: 17px; height: 17px; }
-  .dl-hints { display: flex; gap: 20px; align-items: center; }
+  .dl-wrap { display: flex; flex-direction: column; align-items: center; gap: 12px; }
+  .dl-buttons { display: flex; gap: 12px; flex-wrap: wrap; justify-content: center; }
+  .dl-btn { display: inline-flex; align-items: center; gap: 10px; color: white; text-decoration: none; font-size: 14px; font-weight: 500; font-family: 'Inter', sans-serif; padding: 13px 24px; border-radius: 10px; border: none; cursor: pointer; transition: opacity .15s, transform .15s; }
+  .dl-btn:hover { opacity: 0.85; transform: translateY(-1px); }
+  .dl-btn svg { width: 16px; height: 16px; flex-shrink: 0; }
+  .dl-btn.win { background: #2563eb; box-shadow: 0 0 28px rgba(37,99,235,0.3); }
+  .dl-btn.mac { background: #374151; box-shadow: 0 0 28px rgba(55,65,81,0.3); }
+  .dl-hints { display: flex; gap: 20px; align-items: center; margin-top: 4px; }
   .dl-hint { font-size: 11px; color: var(--muted2); display: flex; align-items: center; gap: 5px; }
   .dl-hint svg { width: 11px; height: 11px; opacity: .6; }
   .mockup { margin: 56px 0; }
@@ -77,6 +80,7 @@
     .feats { grid-template-columns: 1fr; }
     .win-body { grid-template-columns: 1fr 1fr; }
     .dl-hints { flex-direction: column; gap: 8px; }
+    .dl-buttons { flex-direction: column; align-items: center; }
   }
 </style>
 </head>
@@ -90,21 +94,26 @@
       </div>
       <span class="logo-name">MakeGarminTalk</span>
     </a>
-    <div class="nav-badge"><span class="dot-live"></span>Windows · gratuit</div>
+    <div class="nav-badge"><span class="dot-live"></span>Windows &amp; Mac · gratuit</div>
   </nav>
 
   <section class="hero">
     <div class="hero-tag">Vos données Garmin, enfin parlantes</div>
     <h1>Visualisez vos<br>activités <span>Garmin</span><br>en un clic</h1>
-    <p class="hero-desc">Double-cliquez sur l'application. Entrez vos identifiants Garmin. Votre dashboard s'ouvre , tout reste sur votre ordinateur.</p>
+    <p class="hero-desc">Double-cliquez sur l'application. Entrez vos identifiants Garmin. Votre dashboard s'ouvre — tout reste sur votre ordinateur.</p>
     <div class="dl-wrap">
-      <a class="dl-btn" href="https://github.com/noedrion/MakeGarminTalk/releases/latest/download/GarminAnalytics.zip" download>
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
-        Télécharger pour Windows (.zip)
-      </a>
+      <div class="dl-buttons">
+        <a class="dl-btn win" href="https://github.com/noedrion/MakeGarminTalk/releases/latest/download/GarminAnalytics.zip" download>
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+          Windows (.zip)
+        </a>
+        <a class="dl-btn mac" href="https://github.com/noedrion/MakeGarminTalk/releases/latest/download/MakeGarminTalk_mac.zip" download>
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+          macOS (.zip)
+        </a>
+      </div>
       <div class="dl-hints">
         <span class="dl-hint"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>Aucune installation</span>
-        <span class="dl-hint"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="3" width="20" height="14" rx="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/></svg>Windows 10 / 11</span>
         <span class="dl-hint"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/></svg>Données 100% locales</span>
       </div>
     </div>
@@ -144,16 +153,16 @@
   <section class="steps">
     <h2 class="steps-title">Prêt en 3 étapes</h2>
     <div class="steps-grid">
-      <div class="step"><div class="step-n">1</div><h3>Télécharger</h3><p>Un seul fichier <code style="font-size:11px;color:var(--accent);font-family:monospace">.exe</code>. Aucun prérequis, aucune installation.</p></div>
-      <div class="step"><div class="step-n">2</div><h3>Double-cliquer</h3><p>L'application démarre et ouvre votre navigateur automatiquement sur <code style="font-size:11px;color:var(--accent);font-family:monospace">localhost:8000</code>.</p></div>
-      <div class="step"><div class="step-n">3</div><h3>Se connecter</h3><p>Entrez votre email et mot de passe Garmin Connect. L'import démarre , tout reste chez vous.</p></div>
+      <div class="step"><div class="step-n">1</div><h3>Télécharger</h3><p>Choisissez votre système (Windows ou Mac) et téléchargez le zip. Aucun prérequis.</p></div>
+      <div class="step"><div class="step-n">2</div><h3>Double-cliquer</h3><p>Dézippez et double-cliquez sur l'application. Votre navigateur s'ouvre sur <code style="font-size:11px;color:var(--accent);font-family:monospace">localhost:8000</code>.</p></div>
+      <div class="step"><div class="step-n">3</div><h3>Se connecter</h3><p>Entrez votre email et mot de passe Garmin Connect. L'import démarre — tout reste chez vous.</p></div>
     </div>
   </section>
 
   <section class="feats">
     <div class="feat">
       <div class="feat-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 12h-4l-3 9L9 3l-3 9H2"/></svg></div>
-      <div><h3>Toutes vos activités</h3><p>Course, vélo, trail, natation , toutes les activités Garmin importées et organisées.</p></div>
+      <div><h3>Toutes vos activités</h3><p>Course, vélo, trail, natation — toutes les activités Garmin importées et organisées.</p></div>
     </div>
     <div class="feat">
       <div class="feat-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/></svg></div>
@@ -161,11 +170,11 @@
     </div>
     <div class="feat">
       <div class="feat-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg></div>
-      <div><h3>Dashboard interactif</h3><p>Charge d'entraînement, zones FC, économie de course, records personnels , tout en graphiques.</p></div>
+      <div><h3>Dashboard interactif</h3><p>Charge d'entraînement, zones FC, économie de course, records personnels — tout en graphiques.</p></div>
     </div>
     <div class="feat">
       <div class="feat-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg></div>
-      <div><h3>Export CSV & Power BI</h3><p>Exportez automatiquement vos données en CSV avec des vues SQL pré-construites pour Power BI.</p></div>
+      <div><h3>Export CSV &amp; Power BI</h3><p>Exportez automatiquement vos données en CSV avec des vues SQL pré-construites pour Power BI.</p></div>
     </div>
   </section>
 
@@ -173,14 +182,20 @@
     <h2>Prêt à faire parler vos données ?</h2>
     <p>Téléchargez MakeGarminTalk et commencez en moins de 2 minutes.</p>
     <div class="dl-wrap">
-      <a class="dl-btn" href="https://github.com/noedrion/MakeGarminTalk/releases/latest/download/GarminAnalytics.zip" download>
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
-        Télécharger GarminAnalytics.zip
-      </a>
+      <div class="dl-buttons">
+        <a class="dl-btn win" href="https://github.com/noedrion/MakeGarminTalk/releases/latest/download/GarminAnalytics.zip" download>
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+          Windows (.zip)
+        </a>
+        <a class="dl-btn mac" href="https://github.com/noedrion/MakeGarminTalk/releases/latest/download/MakeGarminTalk_mac.zip" download>
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+          macOS (.zip)
+        </a>
+      </div>
       <div class="dl-hints">
         <span class="dl-hint">Gratuit</span>
         <span class="dl-hint" style="color:var(--muted2)">·</span>
-        <span class="dl-hint">Windows 10 / 11</span>
+        <span class="dl-hint">Windows &amp; macOS</span>
         <span class="dl-hint" style="color:var(--muted2)">·</span>
         <span class="dl-hint">Données locales</span>
       </div>
